@@ -1,0 +1,40 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kullanıcı Bilgi</title>
+</head>
+<body>
+
+    <h2>Kullanıcı Bilgisi</h2>
+
+    <!-- Form Yapısı -->
+    <input type="text" id="ad" placeholder="Adınızı girin">
+    <br><br>
+    <input type="text" id="yas" placeholder="Yaşınızı girin">
+    <br><br>
+
+    <button onclick="bilgiGoster()">Göster</button>
+
+    <p id="sonuc"></p>
+
+    <script>
+        function bilgiGoster() {
+
+            // Veri okuma
+            let ad = document.getElementById("ad").value;
+            let yas = Number(document.getElementById("yas").value);
+
+            // Veri kontrolü
+            if (isNaN(yas)) {
+                alert("Lütfen geçerli bir yaş giriniz!");
+                return;
+            }
+
+            // Mesaj gösterme
+            document.getElementById("sonuc").innerHTML =
+                "Merhaba " + ad + ", yaşınız " + yas;
+        }
+    </script>
+
+</body>
+</html>
