@@ -1,0 +1,50 @@
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Toplama İşlemi</title>
+</head>
+<body>
+
+    <h2>Sayıları Topla</h2>
+
+    <!-- Form Yapısı -->
+    <input type="text" id="sayi1" placeholder="1. sayıyı gir">
+    <br><br>
+    <input type="text" id="sayi2" placeholder="2. sayıyı gir">
+    <br><br>
+
+    <button onclick="hesapla()">Topla</button>
+
+    <p id="sonuc"></p>
+
+    <script>
+
+        // Arrow Function (parametre + return)
+        const topla = (a, b) => {
+            return a + b;
+        }
+
+        function hesapla() {
+
+            // Veri okuma
+            let s1 = Number(document.getElementById("sayi1").value);
+            let s2 = Number(document.getElementById("sayi2").value);
+
+            // Kontrol
+            if (isNaN(s1) || isNaN(s2)) {
+                alert("Lütfen geçerli sayılar girin!");
+                return;
+            }
+
+            // Fonksiyon çağırma
+            let toplam = topla(s1, s2);
+
+            // Sonucu yazdırma
+            document.getElementById("sonuc").innerHTML =
+                "Toplam: " + toplam;
+        }
+
+    </script>
+
+</body>
+</html>
